@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Reflection;
+class Program
+{
+    static void Main(string[] args)
+    {
+        System.Console.WriteLine(Directory.GetCurrentDirectory());
+    }
+}
