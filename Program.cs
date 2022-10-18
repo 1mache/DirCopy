@@ -3,6 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        System.Console.WriteLine(Directory.GetCurrentDirectory());
+        var cp = new Copier();
+        cp.CopyFiles("/home/imache/CSProjects/DirCopy/testFrom", "/home/imache/CSProjects/DirCopy/testTo");
     }
 }
