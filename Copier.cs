@@ -17,6 +17,7 @@ class Copier
                 return;
             }
 
+            //full paths of files
             string[] files = Directory.GetFiles(fromPath);
 
             foreach (var file in files)
@@ -43,11 +44,14 @@ class Copier
                 return;
             }
 
+            //copy all the files inside this dir
             CopyFiles(fromPath, toPath);
+            //full paths of nested folders 
             var nestedDirs = Directory.GetDirectories(fromPath);
             
             foreach (var dir in nestedDirs)
             {
+                //gets the folder name
                 var dirName = new DirectoryInfo(dir).Name;
                 var destDir = Path.Combine(toPath, dirName);
                 Directory.CreateDirectory(destDir);
