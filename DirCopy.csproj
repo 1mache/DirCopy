@@ -5,7 +5,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>dircopy</ToolCommandName>
+    <PackageOutputPath>./nupkgs</PackageOutputPath>
+  </PropertyGroup> 
 
   <ItemGroup>
     <Reference Include="ConsoleOptions">

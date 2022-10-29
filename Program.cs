@@ -94,7 +94,7 @@ namespace DirCopy
         static void Main(string[] args)
         {
             var options = new ArgOptions();
-            var parser = new Parser<ArgOptions>(options, "DirCopy");
+            var parser = new Parser<ArgOptions>(options, "dircopy");
 
             parser.Parse(args);
 
