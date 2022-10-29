@@ -106,6 +106,8 @@ namespace DirCopy
             {
                 CopyFiles(options.FromPath, options.ToPath);
             }
+
+            System.Console.WriteLine("Successfully copied!");
         }
     }
 }
