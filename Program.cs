@@ -2,28 +2,12 @@
 namespace DirCopy
 {
     class Program
-    {
-        static string Squiggle(string path)
-        {
-            var curr = Directory.GetCurrentDirectory();
-            //replaces the "~/" with path of current directory 
-            return Path.Combine(curr, path.Substring(2));
-        }
-        
+    { 
         static void CopyFiles(string fromPath, string toPath)
         {
             if(fromPath.Length == 0 || toPath.Length == 0)
                 throw new ArgumentException("Empty path!");
 
-            if(fromPath.Substring(0,2).Equals("~/"))
-            {
-                fromPath = Squiggle(fromPath);
-            }        
-            if(fromPath.Substring(0,2).Equals("~/"))
-            {
-                toPath = Squiggle(toPath);
-            }
-            
             if(Directory.Exists(fromPath))
             {
                 if(!Directory.Exists(toPath))
@@ -53,16 +37,7 @@ namespace DirCopy
         {
             if(fromPath.Length == 0 || toPath.Length == 0)
                 throw new ArgumentException("Empty path!");
-
-            if(fromPath.Substring(0,2).Equals("~/"))
-            {
-                fromPath = Squiggle(fromPath);
-            }        
-            if(fromPath.Substring(0,2).Equals("~/"))
-            {
-                toPath = Squiggle(toPath);
-            }
-
+            
             if(Directory.Exists(fromPath))
             {
                 if(!Directory.Exists(toPath))
