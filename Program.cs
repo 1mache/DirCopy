@@ -12,6 +12,9 @@ namespace DirCopy
         
         static void CopyFiles(string fromPath, string toPath)
         {
+            if(fromPath.Length == 0 || toPath.Length == 0)
+                throw new ArgumentException("Empty path!");
+
             if(fromPath.Substring(0,2).Equals("~/"))
             {
                 fromPath = Squiggle(fromPath);
@@ -48,6 +51,9 @@ namespace DirCopy
 
         static void CopyAll(string fromPath, string toPath)
         {
+            if(fromPath.Length == 0 || toPath.Length == 0)
+                throw new ArgumentException("Empty path!");
+
             if(fromPath.Substring(0,2).Equals("~/"))
             {
                 fromPath = Squiggle(fromPath);
