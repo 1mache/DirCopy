@@ -1,4 +1,4 @@
-﻿
+﻿using ConsoleOptions;
 class Program
 {
     static string Squiggle(string path)
@@ -85,6 +85,5 @@ class Program
     }
     static void Main(string[] args)
     {
-        CopyAll("~/testFrom", "~/testTo");
     }
 }

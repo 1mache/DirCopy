@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="ConsoleOptions">
+      <HintPath>libs\ConsoleOptions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
