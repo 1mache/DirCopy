@@ -48,11 +48,11 @@ namespace DirCopy
 
         static void CopyAll(string fromPath, string toPath)
         {
-            if(fromPath[0].Equals('~'))
+            if(fromPath.Substring(0,2).Equals("~/"))
             {
                 fromPath = Squiggle(fromPath);
             }        
-            if(toPath[0].Equals('~'))
+            if(fromPath.Substring(0,2).Equals("~/"))
             {
                 toPath = Squiggle(toPath);
             }
