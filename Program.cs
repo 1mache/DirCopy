@@ -1,4 +1,5 @@
-﻿namespace DirCopy
+﻿using ConsoleOptions;
+namespace DirCopy
 {
     class Program
     {
@@ -86,6 +87,19 @@
         }
         static void Main(string[] args)
         {
+            var options = new ArgOptions();
+            var parser = new Parser<ArgOptions>(options, "DirCopy");
+
+            parser.Parse(args);
+
+            if(options.IncludeNested == true)
+            {
+                CopyAll(options.FromPath, options.ToPath);
+            }
+            else
+            {
+                CopyFiles(options.FromPath, options.ToPath);
+            }
         }
     }
 }
