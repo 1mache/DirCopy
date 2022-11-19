@@ -68,18 +68,19 @@ namespace DirCopy
         }
         static void Main(string[] args)
         {
-            var options = new ArgOptions();
-            var parser = new Parser<ArgOptions>(options, "dircopy");
+            var config = new ArgConfig();
+            var parser = new Parser<ArgConfig>("dircopy", config);
 
-            parser.Parse(args);
+            bool success = parser.Parse(args);
+            if(!success) return;
 
-            if(options.IncludeNested == true)
+            if(config.IncludeNested == true)
             {
-                CopyAll(options.FromPath, options.ToPath);
+                CopyAll(config.FromPath, config.ToPath);
             }
             else
             {
-                CopyFiles(options.FromPath, options.ToPath);
+                CopyFiles(config.FromPath, config.ToPath);
             }
 
             System.Console.WriteLine("Successfully copied!");

@@ -1,16 +1,16 @@
 using ConsoleOptions;
 namespace DirCopy
 {
-    class ArgOptions
+    class ArgConfig
     {
         public bool IncludeNested {get; private set;} = false; 
 
-        [Param(false, "From where")]
+        [Param("SOURCE",false, "From where")]
         public string FromPath { get; set; } = ""; 
-        [Param(false, "To where")]
+        [Param("DESTINATION",false, "To where")]
         public string ToPath { get; set; } = "";
 
-        [Command("-a", "Copy nested folders")]
+        [Command("a", "Copy nested folders")]
         public void SetIncludeNestedFlag()
         {
             IncludeNested = true;
